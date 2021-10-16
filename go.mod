@@ -1,5 +1,6 @@
 module github.com/anggunpermata/integration-webhook
 
+// +heroku goVersion go1.16
 go 1.16
 
 require (

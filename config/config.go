@@ -3,11 +3,12 @@ package config
 import (
 	"log"
 	"os"
+	"strconv"
 
 	"github.com/joho/godotenv"
 )
 
-var PORT string
+var PORT int
 
 func GoDotEnvVariable(key string) string {
 
@@ -22,5 +23,5 @@ func GoDotEnvVariable(key string) string {
 }
 
 func InitPort() {
-	PORT = GoDotEnvVariable("PORT")
+	PORT, _ = strconv.Atoi(GoDotEnvVariable("PORT"))
 }

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/anggunpermata/integration-webhook/config"
@@ -13,8 +14,9 @@ func main() {
 	e := echo.New()
 	config.InitPort()
 	Routes(e)
-
-	if err := e.Start(config.PORT); err != nil {
+	Port := fmt.Sprintf(":%d", config.PORT)
+	fmt.Println("Port : ", Port)
+	if err := e.Start(Port); err != nil {
 		e.Logger.Fatal(err)
 	}
 }
